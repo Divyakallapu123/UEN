@@ -73,7 +73,14 @@
      </div>
    </footer>
 
-
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.4.1.js" ></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrapValidator.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/wow.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/custom.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/swiper-bundle.min.js"></script>
+    
    <?php wp_footer(); ?>
 
 </body>

@@ -558,10 +558,8 @@ include_once('inc/Theme-control/ot-loader.php');
 include_once('inc/Theme-control/assets/theme-mode/theme-options.php');
 include_once('inc/custom_post_type_header.php');
 include_once('inc/custom_post_type_footer.php');
-// include_once('inc/custom_post_type_events.php');
-// include_once('inc/custom_post_type_individual.php');
 include_once('inc/custom_post_type_blogs.php');
-include_once('inc/custom_post_type_category.php');
+
 
 // // Dark Mode.
 // require_once get_template_directory() . '/classes/class-twenty-twenty-one-dark-mode.php';
