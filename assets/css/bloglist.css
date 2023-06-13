@@ -1,0 +1,16 @@
+.nav-page .nav-item .navpage-link{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color:#000000;margin: 20px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link1{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 8px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 15px 20px 8px 20px;}
+.searach-black-icon{display: flex;}
+.searach-white-icon{display: none;}
+
+
+/* FEATURED SECTION CSS STARTS */
+    
+.featured-sec{padding: 60PX 0PX 40PX 0PX;}
+.featured{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 42px;color: #002399;padding: 30px 0px 30px 0px;}
+
+/* FEATURED SECTION CSS ENDS */
+
+
+

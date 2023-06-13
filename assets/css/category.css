@@ -1,0 +1,15 @@
+.nav-page .nav-item .navpage-link{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color:#000000;margin: 20px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link1{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 8px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 15px 20px 8px 20px;}
+.searach-black-icon{display: flex;}
+.searach-white-icon{display: none;}
+
+/* CATEGORY SECTION STARTS  */
+.category-sec{padding: 80px 10px 40px 10px;}
+.racket{margin: 0;background: #FFF1F0;text-align: center;font-family: 'BebasNeue';font-weight: 400;font-size: 24px;color: #454545;}
+.category-sec .category-img{height: 279px;width: 100%;object-fit: cover;}
+.card-bgcolor{background: #FFF1F0;}
+.card-deck{padding: 10px 10px 10px 10px;}
+.category-container{max-width: 1240px; margin: 0 auto;}
+/* CATEGORY SECTION ENDS  */
+

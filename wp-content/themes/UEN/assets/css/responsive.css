@@ -1,0 +1,53 @@
+/***********Tab View CSS *******************/
+@media (min-width: 768px) and (max-width: 991px) {
+ .mobile-collapse{margin-top:75px}
+ .navbar-collapse{ position:absolute; width: 100%;left: 0;top:0; background-color: #454545;}
+.navbar-toggler.collapsed span{background-image: url('../images//hamberger-menu.svg');background-repeat: no-repeat;background-position: 100%;background-size: auto;}
+.navbar-toggler span{background-image: url('../images/close.svg');background-repeat: no-repeat;background-position: 100%;}
+.categor{font-size: 12px;}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {right: var(--swiper-navigation-sides-offset,45%) !important;}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {left: var(--swiper-navigation-sides-offset,45%)!important;}
+.lorem-ipsumdolor {font-size: 12px;line-height: 15px;}
+.read-more {font-size: 14px;}
+.lorem-ipsum {font-size: 17px;}
+.lorem-para { font-size: 14px;}
+.card-deck{margin: 0px 1px 0px 1px;}
+.contact-content{padding: 0px 10px 0px 10px;}
+.header .search-form.active{right: 12%;/* transition: .4s linear; */}
+.prev_arrow{margin: 0px 30px 0px 0px;}
+.next_arrow{margin: 0px 0px 0px 30px;}
+.norfolk{display: flex;align-self: center;}
+.featured1_img {height: 165px;}
+.email{display: flex;align-self: center;}
+}
+
+
+/**********Mobile View CSS*******************/
+@media only screen and (max-width: 767px) {
+.navbar-toggler.collapsed span{background-image: url('../images//hamberger-menu.svg');background-repeat: no-repeat;background-position: 100%;background-size: auto;}
+.mobile-collapse{margin-top:75px}
+.circleicon{ margin: 20px 20px 10px 20px;}
+.real-time{font-size: 24px; text-align: center; }
+.scoreboard{font-size: 13px; }
+.navbar-collapse{position:absolute;width: 100%;left: 0;top:0; background-color: #454545;}
+.navbar-toggler span{background-image: url('../images/close.svg');background-repeat: no-repeat;background-position: 100%;} 
+.score{font-size: 68px;}
+.cards{padding: 10px 10px 10px 10px;}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {right: var(--swiper-navigation-sides-offset,40%) !important;}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {left: var(--swiper-navigation-sides-offset,40%)!important;}
+.the-norfolk{font-size: 21px;}
+.with{font-size: 12px;}
+.lorem-ipsum{font-size: 20px;}
+.ac-magna{font-size: 13px;}
+.lorem-ipsumdolor {font-size: 17px;}
+.lorem-para{font-size: 14px;}
+.newsletter{font-size: 35px;}
+.stay{font-size: 13px;}
+.lorem-vision{font-size: 22px;}
+.contact-sec{padding: 80PX 10PX 40PX 10PX;} 
+.contact-content{padding: 0px 10px 0px 10px;}
+.prev_arrow{margin: 20px 30px 20px 0px;}
+.next_arrow{margin: 20px 0px 20px 30px;}
+.swiper-slide-container {margin: 10px 10px 10px 10px;}
+.swiper-slide-container-categories{margin: 10px 10px 10px 10px;}
+}
