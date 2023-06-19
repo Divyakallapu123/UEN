@@ -18,7 +18,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-         <?php  get_header() ?>
+  <?php  get_header() ?>
  </head>
   <body>
 <!-- HEADER SECTION -->
@@ -211,14 +211,14 @@
         $the_query = new WP_Query($args);
         while ($the_query->have_posts()) : $the_query->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-            $trimTitle = wp_trim_words(get_the_title(), $num_words = 15);
+            $trimTitle = wp_trim_words(get_the_title(), $num_words = 6);
             $shortdescription = wp_trim_words(get_the_content(), $num_words = 30);
             $terms = get_the_terms($post->ID, 'blogs-category');
              $nameTerm = $terms[0]->name;
         ?>
                  <div class="col-md-6 mb-5">
                         <img src="<?php echo $image[0]; ?>" class="img-fluid featured_img" alt="">
-                        <h5 class="category"><?php echo $nameTerm; ?></h5>
+                        <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h5 class="category"><?php echo $nameTerm; ?></h5></a>
                         <p class="lorem-ipsum"><?php echo $trimTitle; ?></p>
                         <p class="ac-magna"><?Php echo $shortdescription; ?></p>
                         <a class="read-more" href="<?php the_permalink(); ?>">Read more</a>     
@@ -260,8 +260,8 @@
         $the_query = new WP_Query($args);
         while ($the_query->have_posts()) : $the_query->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-            $trimTitle = wp_trim_words(get_the_title(), $num_words = 15);
-            $shortdescription = wp_trim_words(get_the_content(), $num_words = 30);
+            $trimTitle = wp_trim_words(get_the_title(), $num_words = 6);
+            $shortdescription = wp_trim_words(get_the_content(), $num_words = 13);
             $terms = get_the_terms($post->ID, 'blogs-category');
              $nameTerm = $terms[0]->name;
         ?>
@@ -269,7 +269,7 @@
                                <img src="<?php echo $image[0]; ?>" class="img-fluid featured_img1" alt="">
                           </div>
                           <div class="col-md-8 mb-5">
-                                <h6 class="categor"><?php echo $nameTerm; ?></h6>
+                          <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h6 class="categor"><?php echo $nameTerm; ?></h6></a>
                                 <p class="lorem-ipsumdolor"><?Php echo $shortdescription; ?></p>
                                 <a class="read-more"href="<?php the_permalink(); ?>">Read more</a>
                           </div>
@@ -340,8 +340,8 @@
         $the_query = new WP_Query($args);
         while ($the_query->have_posts()) : $the_query->the_post();
             $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-            $trimTitle = wp_trim_words(get_the_title(), $num_words = 15);
-            $shortdescription = wp_trim_words(get_the_content(), $num_words = 30);
+            $trimTitle = wp_trim_words(get_the_title(), $num_words = 6);
+            $shortdescription = wp_trim_words(get_the_content(), $num_words = 16);
             $terms = get_the_terms($post->ID, 'blogs-category');
              $nameTerm = $terms[0]->name;
         ?>
@@ -349,7 +349,7 @@
                       <div class="card">
                         <img src="<?php echo $image[0]; ?>" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
-                          <h5 class="card-title"><?php echo $nameTerm; ?></h5>
+                        <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h5 class="card-title"><?php echo $nameTerm; ?></h5></a>
                           <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                           <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
                            <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
@@ -417,7 +417,7 @@
                   </div>
                 </div>
                 <div class="view mt-3">
-                  <a class="view-all" href="">view all</a>
+                  <a class="view-all" href="<?php echo get_site_url() ?>/blogs" ?><?php echo get_field('view_all'); ?></a>
                 </div>
             </div>     
         </section>
@@ -429,54 +429,90 @@
    
      <section class="events-sec">
               <div class="container">
+              <?php $cat = get_field('events');
+            if ($cat) :
+
+            endif;
+            $cat_name = $cat->name;
+            $cat_slug = $cat->slug;
+            ?>
                 <div class="d-flex">
-                  <h2 class="events"><?php echo get_field('events_title',123); ?></h2>
+                  <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $cat_slug; ?>">
+                    <h2 class="events"><?php echo $cat_name; ?></h2>
+                    </a>
                   <div class="thin_line"></div>
                 </div>
                 <div class="card-deck">
                   <div class="row">
                   <?php
-        if ($category == "all") {
-            $args = array(
-                'post_type' => 'blogs',
-                'post_status' => 'publish',
-                'order' => 'ASC',
-                'offset' => 1,
-                // 'page'=>1,
-                'posts_per_page' => 6,
-            );
-        } else {
-            $args = array(
-                'post_type' => 'blogs',
-                'post_status' => 'publish',
-                'order' => 'ASC',
-                'offset' => 1,
-                // 'page'=>1,
-                'posts_per_page' => 6,
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'blogs-category',
-                        'field'    => 'slug',
-                        'terms'    => 'events',
-                    )
-                )
-            );
-        }
-        ?>
-        <?php
-        $the_query = new WP_Query($args);
-        while ($the_query->have_posts()) : $the_query->the_post();
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-            $trimTitle = wp_trim_words(get_the_title(), $num_words = 15);
-            $shortdescription = wp_trim_words(get_the_content(), $num_words = 30);
-            $terms = get_the_terms($post->ID, 'blogs-category');
-             $nameTerm = $terms[0]->name;
-        ?>
+                        // if(isset($_GET['cat'])){
+
+                        // }
+                        $args = array(
+                            'post_type' => 'blogs',
+                            'post_status' => 'publish',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'blogs-category',
+                                    'field'    => 'slug',
+                                    'terms'    => $cat_name,
+                                ),
+                            ),
+                            'posts_per_page' => 6,
+                            'paged' => 1
+                        );
+                        $the_query = new WP_Query($args);
+                        if ($the_query->have_posts()) {
+                            $i = 1;
+                            while ($the_query->have_posts()) {
+                                $the_query->the_post();
+
+
+                                $trimTitle = wp_trim_words(get_the_title(), $num_words = 6);
+
+                                $shordescription = wp_trim_words(get_the_content(), $num_words = 16);
+                                $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
+
+                                $terms = get_the_terms($post->ID, 'blogs-category');
+                                if ($terms && !is_wp_error($terms)) :
+                                    $tname_arr = array();
+                                    $tslugs_arr = array();
+                                    foreach ($terms as $term) {
+                                        $tslugs_arr[] = $term->slug;
+                                        $tname_arr[] = $term->name;
+                                    }
+                                    $terms_slug_str = join(" ", $tslugs_arr);
+                                endif;
+
+                                // foreach ( $terms as $term ) {
+                                //       $category=$category.' '.$term;
+                                // }
+
+                        ?>
                     <div class="col-md-4 mb-5 cards">
                       <div class="card">
                         <img src="<?php echo $image[0]; ?>" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
-                          <h5 class="card-title"><?php echo $nameTerm; ?></h5>
+                        <?php
+                                            $terms = get_the_terms($post->ID, 'blogs-category');
+                                            if ($terms && !is_wp_error($terms)) :
+                                                $tname_arr = array();
+                                                $tslugs_arr = array();
+                                                $count = 1;
+                                                foreach ($terms as $term) {
+                                            ?>
+                                                    <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $term->slug ?>"><h5 class="card-title"><?php if ($count > 1) { ?>,<?php } ?>
+                                                        <?php echo $term->name; ?></h5>
+                                                        
+                                                    </a>
+                                            <?php $count++;
+                                                }
+                                                $terms_slug_str = join(",", $tslugs_arr);
+                                            // $terms_name_arr = join(" ", $tname_arr);
+
+                                            endif;
+                                            ?>
+                          <h5 class="card-title"><?php //echo $nameTerm; ?></h5>
                           <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                           <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
                            <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
@@ -529,7 +565,7 @@
                     </div>
                     <div class="col-md-4 mb-3 cards">
                       <div class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured6_img.png" class="card-img-top featured1_img" alt="...">
+                        <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/featured6_img.png" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
                           <h5 class="card-title">Category</h5>
                           <p class="card-text lorem-ipsum">Lorem ipsum dolor sit</p>
@@ -538,13 +574,19 @@
                         </div>
                       </div>
                     </div> -->
-                    <?php endwhile;
-                   wp_reset_query();
-               ?> 
+                    <?php
+                                $i++;
+                            }
+                        } else {
+                            // no posts found
+                        }
+                        /* Restore original Post Data */
+                        wp_reset_query();
+                        ?>
                   </div>
                 </div>
                 <div class="view mt-3">
-                  <a class="view-all" href="">view all</a>
+                  <a class="view-all" href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $term->slug ?>"><?php echo get_field('view_all'); ?></a>
                 </div>
               </div>
            </section>  
@@ -555,52 +597,91 @@
 
           <section class="individual-sec">
                <div class="container">
+                    <?php $cat = get_field('individual');
+                  if ($cat) :
+
+                  endif;
+                  $cat_name = $cat->name;
+                  $cat_slug = $cat->slug;
+                  ?>
                 <div class="d-flex">
-                  <h2 class="individual"><?php echo get_field('individual_title',175); ?></h2>
+                  
+                    <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $cat_slug; ?>">
+                    <h2 class="individual"><?php echo $cat_name; ?></h2>
+                    </a>
+                  <?php //echo get_field('individual_title',175); ?>
                   <div class="thin_line"></div>
                 </div>
                 <div class="card-deck">
                   <div class="row">
                   <?php
-                    if ($category == "all") {
+                        // if(isset($_GET['cat'])){
+
+                        // }
                         $args = array(
                             'post_type' => 'blogs',
                             'post_status' => 'publish',
-                            'offset' => 0,
-                            // 'page'=>1,
-                            'posts_per_page' => 6
-                        );
-                    } else {
-                        $args = array(
-                            'post_type' => 'blogs',
-                            'post_status' => 'publish',
-                            'offset' => 1,
-                            // 'page'=>1,
-                            'posts_per_page' => 6,
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'blogs-category',
                                     'field'    => 'slug',
-                                    'terms'    => $category,
-                                )
-                            )
+                                    'terms'    => $cat_slug,
+                                ),
+                            ),
+                            'posts_per_page' => 6,
+                            'paged' => 1
                         );
-                    }
-        ?>
-        <?php
-        $the_query = new WP_Query($args);
-        while ($the_query->have_posts()) : $the_query->the_post();
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-            $trimTitle = wp_trim_words(get_the_title(), $num_words = 15);
-            $shortdescription = wp_trim_words(get_the_content(), $num_words = 30);
-            $terms = get_the_terms($post->ID, 'blogs-category');
-             $nameTerm = $terms[0]->name;
-        ?>
+                        $the_query = new WP_Query($args);
+                        if ($the_query->have_posts()) {
+                            $i = 1;
+                            while ($the_query->have_posts()) {
+                                $the_query->the_post();
+
+
+                                $trimTitle = wp_trim_words(get_the_title(), $num_words = 6);
+
+                                $shordescription = wp_trim_words(get_the_content(), $num_words = 16);
+                                $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
+
+                                $terms = get_the_terms($post->ID, 'blogs-category');
+                                if ($terms && !is_wp_error($terms)) :
+                                    $tname_arr = array();
+                                    $tslugs_arr = array();
+                                    foreach ($terms as $term) {
+                                        $tslugs_arr[] = $term->slug;
+                                        $tname_arr[] = $term->name;
+                                    }
+                                    $terms_slug_str = join(" ", $tslugs_arr);
+                                endif;
+
+                                // foreach ( $terms as $term ) {
+                                //       $category=$category.' '.$term;
+                                // }
+
+                        ?>
                     <div class="col-md-4 mb-5 cards">
                       <div class="card">
                         <img src="<?php echo $image[0]; ?>" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
-                          <a href="<?php echo get_field('category_link'); ?>"><h5 class="card-title"><?php echo $nameTerm; ?></h5></a>
+                        <?php
+                                            $terms = get_the_terms($post->ID, 'blogs-category');
+                                            if ($terms && !is_wp_error($terms)) :
+                                                $tname_arr = array();
+                                                $tslugs_arr = array();
+                                                $count = 1;
+                                                foreach ($terms as $term) {
+                                            ?>
+                                                    <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $term->slug ?>"><h5 class="card-title"><?php if ($count > 1) { ?>,<?php } ?>
+                                                        <?php echo $term->name; ?></h5> 
+                                                    </a>
+                                            <?php $count++;
+                                                }
+                                                $terms_slug_str = join(",", $tslugs_arr);
+                                            // $terms_name_arr = join(" ", $tname_arr);
+
+                                            endif;
+                                            ?>
+                          <!-- <a href="<?php //echo get_field('category_link'); ?>"><h5 class="card-title"><?php //echo $nameTerm; ?></h5></a> -->
                           <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                           <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
                            <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
@@ -609,7 +690,7 @@
                     </div>
                     <!-- <div class="col-md-4 mb-5 cards">
                       <div class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured2_img.png" class="card-img-top featured1_img" alt="...">
+                        <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/featured2_img.png" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
                           <h5 class="card-title">Category</h5>
                           <p class="card-text lorem-ipsum">Lorem ipsum dolor sit</p>
@@ -620,7 +701,7 @@
                     </div>
                     <div class="col-md-4 mb-5 cards">
                       <div class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured3_img.png" class="card-img-top featured1_img" alt="...">
+                        <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/featured3_img.png" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
                           <h5 class="card-title">Category</h5>
                           <p class="card-text lorem-ipsum">Lorem ipsum dolor sit</p>
@@ -631,7 +712,7 @@
                     </div>
                     <div class="col-md-4 mb-3 cards">
                       <div class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured4_img.png" class="card-img-top featured1_img" alt="...">
+                        <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/featured4_img.png" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
                           <h5 class="card-title">Category</h5>
                           <p class="card-text lorem-ipsum">Lorem ipsum dolor sit</p>
@@ -642,7 +723,7 @@
                     </div>
                     <div class="col-md-4 mb-3 cards">
                       <div class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured5_img.png" class="card-img-top featured1_img" alt="...">
+                        <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/featured5_img.png" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
                           <h5 class="card-title">Category</h5>
                           <p class="card-text lorem-ipsum">Lorem ipsum dolor sit</p>
@@ -653,7 +734,7 @@
                     </div>
                     <div class="col-md-4 mb-3 cards">
                       <div class="card">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured6_img.png" class="card-img-top featured1_img" alt="...">
+                        <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/featured6_img.png" class="card-img-top featured1_img" alt="...">
                         <div class="card-body cardbg-color">
                           <h5 class="card-title">Category</h5>
                           <p class="card-text lorem-ipsum">Lorem ipsum dolor sit</p>
@@ -662,13 +743,19 @@
                         </div>
                       </div>
                     </div> -->
-                    <?php endwhile;
-                   wp_reset_query();
-               ?> 
+                    <?php
+                                $i++;
+                            }
+                        } else {
+                            // no posts found
+                        }
+                        /* Restore original Post Data */
+                        wp_reset_query();
+                        ?> 
                   </div>
                 </div>
                 <div class="view mt-3">
-                  <a class="view-all" href="">view all</a>
+                  <a class="view-all" href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $term->slug ?>"><?php echo get_field('view_all'); ?></a>
                 </div>
                </div>
           </section>
@@ -681,7 +768,7 @@
            <section class="categories-sec">
             <div class="container">
               <div class="d-flex">
-                <h2 class="categories"><?php echo get_field('category_title'); ?> </h2>
+                <a href="<?php echo get_site_url() ?>/Categories"><h2 class="categories"><?php echo get_field('category_title'); ?> </h2></a>
                 <div class="thin_line"></div>
               </div>
             </div>
@@ -713,7 +800,7 @@ foreach ($cat as $catVal) {
                   <div class="swiper-slide-container-categories">
                         <div class="row">
                             <div class="col-md-12">
-                            <a href="<?php echo get_field('category_link'); ?>">
+                             <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $catVal->slug ?>">
                               <img src="<?php echo $meta_image; ?>" class="img-fluid combat_img" alt="">
                               <p class="combat"><?php echo $catVal->name; ?></p>
                               </a>  
@@ -796,7 +883,7 @@ foreach ($cat as $catVal) {
                 <div class="swiper-button-prev"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/next_arrow.svg" class="img-fluid prev_arrow" alt=""> </div>
             </div>
             <div class="view">
-              <a class="view-all" href="">view all</a>
+              <a class="view-all" href="<?php echo get_site_url() ?>/categories" ?><?php echo get_field('view_all'); ?></a>
             </div> 
            </section>
 
@@ -806,22 +893,8 @@ foreach ($cat as $catVal) {
    <!-- FOOTERS STARTS -->
               <?php get_footer() ?>
    <!-- FOOTER ENDS -->
-
-   
-    
     <script>
-          let searchForm = document.querySelector('.search-form');
-           let searchFormm = document.querySelector('.qqqq');
-           let searchFormmm = document.querySelector('.close_img');
-           document.querySelector('#search-btn').onclick = () =>
-           {
-            searchForm.classList.toggle('active')
-            searchFormm.classList.toggle('active')
-           }
-           document.querySelector('#close').onclick = () =>{
-            searchForm.classList.remove('active')
-            searchFormm.classList.remove('active')
-           }
+         
       </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage UEN
+ * @subpackage blueorchid
  * @since Twenty Twenty-One 1.0
  */
 
@@ -14,7 +14,7 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'UEN_setup' ) ) {
+if ( ! function_exists( 'blueorchid_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -26,14 +26,14 @@ if ( ! function_exists( 'UEN_setup' ) ) {
 	 *
 	 * @return void
 	 */
-	function UEN_setup() {
+	function blueorchid_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Twenty Twenty-One, use a find and replace
-		 * to change 'UEN' to the name of your theme in all the template files.
+		 * to change 'blueorchid' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'UEN', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'blueorchid', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -73,8 +73,8 @@ if ( ! function_exists( 'UEN_setup' ) ) {
 
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary menu', 'UEN' ),
-				'footer'  => esc_html__( 'Secondary menu', 'UEN' ),
+				'primary' => esc_html__( 'Primary menu', 'blueorchid' ),
+				'footer'  => esc_html__( 'Secondary menu', 'blueorchid' ),
 			)
 		);
 
@@ -147,44 +147,44 @@ if ( ! function_exists( 'UEN_setup' ) ) {
 			'editor-font-sizes',
 			array(
 				array(
-					'name'      => esc_html__( 'Extra small', 'UEN' ),
-					'shortName' => esc_html_x( 'XS', 'Font size', 'UEN' ),
+					'name'      => esc_html__( 'Extra small', 'blueorchid' ),
+					'shortName' => esc_html_x( 'XS', 'Font size', 'blueorchid' ),
 					'size'      => 16,
 					'slug'      => 'extra-small',
 				),
 				array(
-					'name'      => esc_html__( 'Small', 'UEN' ),
-					'shortName' => esc_html_x( 'S', 'Font size', 'UEN' ),
+					'name'      => esc_html__( 'Small', 'blueorchid' ),
+					'shortName' => esc_html_x( 'S', 'Font size', 'blueorchid' ),
 					'size'      => 18,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => esc_html__( 'Normal', 'UEN' ),
-					'shortName' => esc_html_x( 'M', 'Font size', 'UEN' ),
+					'name'      => esc_html__( 'Normal', 'blueorchid' ),
+					'shortName' => esc_html_x( 'M', 'Font size', 'blueorchid' ),
 					'size'      => 20,
 					'slug'      => 'normal',
 				),
 				array(
-					'name'      => esc_html__( 'Large', 'UEN' ),
-					'shortName' => esc_html_x( 'L', 'Font size', 'UEN' ),
+					'name'      => esc_html__( 'Large', 'blueorchid' ),
+					'shortName' => esc_html_x( 'L', 'Font size', 'blueorchid' ),
 					'size'      => 24,
 					'slug'      => 'large',
 				),
 				array(
-					'name'      => esc_html__( 'Extra large', 'UEN' ),
-					'shortName' => esc_html_x( 'XL', 'Font size', 'UEN' ),
+					'name'      => esc_html__( 'Extra large', 'blueorchid' ),
+					'shortName' => esc_html_x( 'XL', 'Font size', 'blueorchid' ),
 					'size'      => 40,
 					'slug'      => 'extra-large',
 				),
 				array(
-					'name'      => esc_html__( 'Huge', 'UEN' ),
-					'shortName' => esc_html_x( 'XXL', 'Font size', 'UEN' ),
+					'name'      => esc_html__( 'Huge', 'blueorchid' ),
+					'shortName' => esc_html_x( 'XXL', 'Font size', 'blueorchid' ),
 					'size'      => 96,
 					'slug'      => 'huge',
 				),
 				array(
-					'name'      => esc_html__( 'Gigantic', 'UEN' ),
-					'shortName' => esc_html_x( 'XXXL', 'Font size', 'UEN' ),
+					'name'      => esc_html__( 'Gigantic', 'blueorchid' ),
+					'shortName' => esc_html_x( 'XXXL', 'Font size', 'blueorchid' ),
 					'size'      => 144,
 					'slug'      => 'gigantic',
 				),
@@ -215,52 +215,52 @@ if ( ! function_exists( 'UEN_setup' ) ) {
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => esc_html__( 'Black', 'UEN' ),
+					'name'  => esc_html__( 'Black', 'blueorchid' ),
 					'slug'  => 'black',
 					'color' => $black,
 				),
 				array(
-					'name'  => esc_html__( 'Dark gray', 'UEN' ),
+					'name'  => esc_html__( 'Dark gray', 'blueorchid' ),
 					'slug'  => 'dark-gray',
 					'color' => $dark_gray,
 				),
 				array(
-					'name'  => esc_html__( 'Gray', 'UEN' ),
+					'name'  => esc_html__( 'Gray', 'blueorchid' ),
 					'slug'  => 'gray',
 					'color' => $gray,
 				),
 				array(
-					'name'  => esc_html__( 'Green', 'UEN' ),
+					'name'  => esc_html__( 'Green', 'blueorchid' ),
 					'slug'  => 'green',
 					'color' => $green,
 				),
 				array(
-					'name'  => esc_html__( 'Blue', 'UEN' ),
+					'name'  => esc_html__( 'Blue', 'blueorchid' ),
 					'slug'  => 'blue',
 					'color' => $blue,
 				),
 				array(
-					'name'  => esc_html__( 'Purple', 'UEN' ),
+					'name'  => esc_html__( 'Purple', 'blueorchid' ),
 					'slug'  => 'purple',
 					'color' => $purple,
 				),
 				array(
-					'name'  => esc_html__( 'Red', 'UEN' ),
+					'name'  => esc_html__( 'Red', 'blueorchid' ),
 					'slug'  => 'red',
 					'color' => $red,
 				),
 				array(
-					'name'  => esc_html__( 'Orange', 'UEN' ),
+					'name'  => esc_html__( 'Orange', 'blueorchid' ),
 					'slug'  => 'orange',
 					'color' => $orange,
 				),
 				array(
-					'name'  => esc_html__( 'Yellow', 'UEN' ),
+					'name'  => esc_html__( 'Yellow', 'blueorchid' ),
 					'slug'  => 'yellow',
 					'color' => $yellow,
 				),
 				array(
-					'name'  => esc_html__( 'White', 'UEN' ),
+					'name'  => esc_html__( 'White', 'blueorchid' ),
 					'slug'  => 'white',
 					'color' => $white,
 				),
@@ -271,42 +271,42 @@ if ( ! function_exists( 'UEN_setup' ) ) {
 			'editor-gradient-presets',
 			array(
 				array(
-					'name'     => esc_html__( 'Purple to yellow', 'UEN' ),
+					'name'     => esc_html__( 'Purple to yellow', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $purple . ' 0%, ' . $yellow . ' 100%)',
 					'slug'     => 'purple-to-yellow',
 				),
 				array(
-					'name'     => esc_html__( 'Yellow to purple', 'UEN' ),
+					'name'     => esc_html__( 'Yellow to purple', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $purple . ' 100%)',
 					'slug'     => 'yellow-to-purple',
 				),
 				array(
-					'name'     => esc_html__( 'Green to yellow', 'UEN' ),
+					'name'     => esc_html__( 'Green to yellow', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $green . ' 0%, ' . $yellow . ' 100%)',
 					'slug'     => 'green-to-yellow',
 				),
 				array(
-					'name'     => esc_html__( 'Yellow to green', 'UEN' ),
+					'name'     => esc_html__( 'Yellow to green', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $green . ' 100%)',
 					'slug'     => 'yellow-to-green',
 				),
 				array(
-					'name'     => esc_html__( 'Red to yellow', 'UEN' ),
+					'name'     => esc_html__( 'Red to yellow', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $red . ' 0%, ' . $yellow . ' 100%)',
 					'slug'     => 'red-to-yellow',
 				),
 				array(
-					'name'     => esc_html__( 'Yellow to red', 'UEN' ),
+					'name'     => esc_html__( 'Yellow to red', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $yellow . ' 0%, ' . $red . ' 100%)',
 					'slug'     => 'yellow-to-red',
 				),
 				array(
-					'name'     => esc_html__( 'Purple to red', 'UEN' ),
+					'name'     => esc_html__( 'Purple to red', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $purple . ' 0%, ' . $red . ' 100%)',
 					'slug'     => 'purple-to-red',
 				),
 				array(
-					'name'     => esc_html__( 'Red to purple', 'UEN' ),
+					'name'     => esc_html__( 'Red to purple', 'blueorchid' ),
 					'gradient' => 'linear-gradient(160deg, ' . $red . ' 0%, ' . $purple . ' 100%)',
 					'slug'     => 'red-to-purple',
 				),
@@ -318,10 +318,10 @@ if ( ! function_exists( 'UEN_setup' ) ) {
 		* This is done conditionally to avoid loading the starter content on every
 		* page load, as it is a one-off operation only needed once in the customizer.
 		*/
-		// if ( is_customize_preview() ) {
-		// 	require get_template_directory() . '/inc/starter-content.php';
-		// 	add_theme_support( 'starter-content', UEN_get_starter_content() );
-		// }
+		if ( is_customize_preview() ) {
+			require get_template_directory() . '/inc/starter-content.php';
+			add_theme_support( 'starter-content', blueorchid_get_starter_content() );
+		}
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
@@ -343,7 +343,7 @@ if ( ! function_exists( 'UEN_setup' ) ) {
 		add_filter( 'rss_widget_feed_link', '__return_empty_string' );
 	}
 }
-add_action( 'after_setup_theme', 'UEN_setup' );
+add_action( 'after_setup_theme', 'blueorchid_setup' );
 
 /**
  * Register widget area.
@@ -354,13 +354,13 @@ add_action( 'after_setup_theme', 'UEN_setup' );
  *
  * @return void
  */
-function UEN_widgets_init() {
+function blueorchid_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer', 'UEN' ),
+			'name'          => esc_html__( 'Footer', 'blueorchid' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'UEN' ),
+			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'blueorchid' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -368,7 +368,7 @@ function UEN_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'UEN_widgets_init' );
+add_action( 'widgets_init', 'blueorchid_widgets_init' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -381,13 +381,13 @@ add_action( 'widgets_init', 'UEN_widgets_init' );
  *
  * @return void
  */
-function UEN_content_width() {
+function blueorchid_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'UEN_content_width', 750 );
+	$GLOBALS['content_width'] = apply_filters( 'blueorchid_content_width', 750 );
 }
-add_action( 'after_setup_theme', 'UEN_content_width', 0 );
+add_action( 'after_setup_theme', 'blueorchid_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -396,7 +396,7 @@ add_action( 'after_setup_theme', 'UEN_content_width', 0 );
  *
  * @return void
  */
-function UEN_scripts() {
+function blueorchid_scripts() {
 	// Note, the is_IE global variable is defined by WordPress and is used
 	// to detect if the current browser is internet explorer.
 	global $is_IE, $wp_scripts;
@@ -412,7 +412,7 @@ function UEN_scripts() {
 	wp_style_add_data( 'twenty-twenty-one-style', 'rtl', 'replace' );
 
 	// Print styles.
-	wp_enqueue_style( 'twenty-twenty-one-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+	// wp_enqueue_style( 'twenty-twenty-one-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
 	// Threaded comment reply styles.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -466,7 +466,7 @@ function UEN_scripts() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'UEN_scripts' );
+add_action( 'wp_enqueue_scripts', 'blueorchid_scripts' );
 
 /**
  * Enqueue block editor script.
@@ -475,12 +475,12 @@ add_action( 'wp_enqueue_scripts', 'UEN_scripts' );
  *
  * @return void
  */
-function UEN_block_editor_script() {
+function blueorchid_block_editor_script() {
 
-	wp_enqueue_script( 'UEN-editor', get_theme_file_uri( '/assets/js/editor.js' ), array( 'wp-blocks', 'wp-dom' ), wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_script( 'blueorchid-editor', get_theme_file_uri( '/assets/js/editor.js' ), array( 'wp-blocks', 'wp-dom' ), wp_get_theme()->get( 'Version' ), true );
 }
 
-add_action( 'enqueue_block_editor_assets', 'UEN_block_editor_script' );
+add_action( 'enqueue_block_editor_assets', 'blueorchid_block_editor_script' );
 
 /**
  * Fix skip link focus in IE11.
@@ -492,7 +492,7 @@ add_action( 'enqueue_block_editor_assets', 'UEN_block_editor_script' );
  *
  * @link https://git.io/vWdr2
  */
-function UEN_skip_link_focus_fix() {
+function blueorchid_skip_link_focus_fix() {
 
 	// If SCRIPT_DEBUG is defined and true, print the unminified file.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
@@ -508,7 +508,7 @@ function UEN_skip_link_focus_fix() {
 		<?php
 	}
 }
-add_action( 'wp_print_footer_scripts', 'UEN_skip_link_focus_fix' );
+add_action( 'wp_print_footer_scripts', 'blueorchid_skip_link_focus_fix' );
 
 /**
  * Enqueue non-latin language styles.
@@ -517,21 +517,21 @@ add_action( 'wp_print_footer_scripts', 'UEN_skip_link_focus_fix' );
  *
  * @return void
  */
-// function UEN_non_latin_languages() {
-// 	$custom_css = UEN_get_non_latin_css( 'front-end' );
+// function blueorchid_non_latin_languages() {
+// 	$custom_css = blueorchid_get_non_latin_css( 'front-end' );
 
 // 	if ( $custom_css ) {
 // 		wp_add_inline_style( 'twenty-twenty-one-style', $custom_css );
 // 	}
 // }
-// add_action( 'wp_enqueue_scripts', 'UEN_non_latin_languages' );
+// add_action( 'wp_enqueue_scripts', 'blueorchid_non_latin_languages' );
 
 // SVG Icons class.
 //require get_template_directory() . '/classes/class-twenty-twenty-one-svg-icons.php';
 
 // Custom color classes.
 // require get_template_directory() . '/classes/class-twenty-twenty-one-custom-colors.php';
-// new UEN_Custom_Colors();
+// new blueorchid_Custom_Colors();
 
 // Enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-functions.php';
@@ -544,7 +544,7 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Customizer additions.
 // require get_template_directory() . '/classes/class-twenty-twenty-one-customize.php';
-// new UEN_Customize();
+// new blueorchid_Customize();
 
 // Block Patterns.
 require get_template_directory() . '/inc/block-patterns.php';
@@ -559,8 +559,6 @@ include_once('inc/Theme-control/assets/theme-mode/theme-options.php');
 include_once('inc/custom_post_type_header.php');
 include_once('inc/custom_post_type_footer.php');
 include_once('inc/custom_post_type_blogs.php');
-
-
 // // Dark Mode.
 // require_once get_template_directory() . '/classes/class-twenty-twenty-one-dark-mode.php';
 // new Twenty_Twenty_One_Dark_Mode();
@@ -572,9 +570,9 @@ include_once('inc/custom_post_type_blogs.php');
  *
  * @return void
  */
-function UEN_customize_preview_init() {
+function blueorchid_customize_preview_init() {
 	wp_enqueue_script(
-		'UEN-customize-helpers',
+		'blueorchid-customize-helpers',
 		get_theme_file_uri( '/assets/js/customize-helpers.js' ),
 		array(),
 		wp_get_theme()->get( 'Version' ),
@@ -582,14 +580,14 @@ function UEN_customize_preview_init() {
 	);
 
 	wp_enqueue_script(
-		'UEN-customize-preview',
+		'blueorchid-customize-preview',
 		get_theme_file_uri( '/assets/js/customize-preview.js' ),
-		array( 'customize-preview', 'customize-selective-refresh', 'jquery', 'UEN-customize-helpers' ),
+		array( 'customize-preview', 'customize-selective-refresh', 'jquery', 'blueorchid-customize-helpers' ),
 		wp_get_theme()->get( 'Version' ),
 		true
 	);
 }
-add_action( 'customize_preview_init', 'UEN_customize_preview_init' );
+add_action( 'customize_preview_init', 'blueorchid_customize_preview_init' );
 
 /**
  * Enqueue scripts for the customizer.
@@ -598,17 +596,17 @@ add_action( 'customize_preview_init', 'UEN_customize_preview_init' );
  *
  * @return void
  */
-function UEN_customize_controls_enqueue_scripts() {
+function blueorchid_customize_controls_enqueue_scripts() {
 
 	wp_enqueue_script(
-		'UEN-customize-helpers',
+		'blueorchid-customize-helpers',
 		get_theme_file_uri( '/assets/js/customize-helpers.js' ),
 		array(),
 		wp_get_theme()->get( 'Version' ),
 		true
 	);
 }
-add_action( 'customize_controls_enqueue_scripts', 'UEN_customize_controls_enqueue_scripts' );
+add_action( 'customize_controls_enqueue_scripts', 'blueorchid_customize_controls_enqueue_scripts' );
 
 /**
  * Calculate classes for the main <html> element.
@@ -617,7 +615,7 @@ add_action( 'customize_controls_enqueue_scripts', 'UEN_customize_controls_enqueu
  *
  * @return void
  */
-function UEN_the_html_classes() {
+function blueorchid_the_html_classes() {
 	/**
 	 * Filters the classes for the main <html> element.
 	 *
@@ -625,7 +623,7 @@ function UEN_the_html_classes() {
 	 *
 	 * @param string The list of classes. Default empty string.
 	 */
-	$classes = apply_filters( 'UEN_html_classes', '' );
+	$classes = apply_filters( 'blueorchid_html_classes', '' );
 	if ( ! $classes ) {
 		return;
 	}
@@ -639,7 +637,7 @@ function UEN_the_html_classes() {
  *
  * @return void
  */
-function UEN_add_ie_class() {
+function blueorchid_add_ie_class() {
 	?>
 	<script>
 	if ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {
@@ -648,7 +646,7 @@ function UEN_add_ie_class() {
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'UEN_add_ie_class' );
+add_action( 'wp_footer', 'blueorchid_add_ie_class' );
 
 if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	/**
@@ -660,6 +658,6 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	 */
 	function wp_get_list_item_separator() {
 		/* translators: Used between list items, there is a space after the comma. */
-		return __( ', ', 'UEN' );
+		return __( ', ', 'blueorchid' );
 	}
 endif;

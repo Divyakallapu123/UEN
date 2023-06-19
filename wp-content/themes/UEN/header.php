@@ -24,11 +24,10 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/custom.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/home.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/about.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper-bundle.min.css">
    <title>UEN</title>
-
+   
 
 
    <?php wp_head();?>

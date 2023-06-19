@@ -25,9 +25,9 @@
                                 <p class="stay mb-2"><?php echo get_field('newsletter_content',65) ?></p>
                          </div>
                          <?php //echo do_shortcode('[email-subscribers-form id="1"]'); ?>
-                         <div class="col-md-7">
+                         <div class="col-md-7" id="subscribe">
                          <div class="emaillist" id="es_form_f1-n1">
-                            <form action="" method="post" class="es_subscription_form es_shortcode_form  es_ajax_subscription_form formValidation" id="es_subscription_form_648320ca445bb" data-source="ig-es" data-form-id="1">
+                            <form action="" method="post" class="es_subscription_form es_shortcode_form  es_ajax_subscription_form" id="es_subscription_form_648320ca445bb" data-source="ig-es" data-form-id="1">
                                 <input type="hidden" name="esfpx_form_id" value="1"><input type="hidden" name="esfpx_lists[]" value="ff57cffc2ff4"><input type="hidden" name="es" value="subscribe">
                                 <input type="hidden" name="esfpx_es_form_identifier" value="f1-n1">
                                 <input type="hidden" name="esfpx_es_email_page" value="13">
@@ -41,16 +41,16 @@
                               <label for="exampleInputEmail1" class="mb-3 mt-3 es-field-label">Email address</label>
                               <div class="row">
                                   <div class="col-md-7 mt-2">
-                                    <input type="email" class="form-control mb-3 mt-1 email-address es-email" id="exampleInputEmail1" type="email" name="esfpx_email" autocomplete="off" placeholder="Enter your email" id="esfpx_email_0fe74ada6116e">
+                                    <input type="email" class="form-control mb-3 mt-1 email-address es-email"  id="esfpx_email_0fe74ada6116e" name="esfpx_email" autocomplete="off" placeholder="Enter your email">
                                   </div>
                                   <div class="col-md-5">
-                                    <button type="submit" class="btn btn-primary button" name="submit">BUTTON</button>
+                                    <button type="submit" class="btn btn-primary button" name="submit">SING UP</button>
                                   </div>
                               </div>
                             </div>
-                            <span class="es_spinner_image" id="spinner-image"><img src="http://localhost/UEN/wp-content/plugins/email-subscribers/lite/public/images/spinner.gif" alt="Loading"></span>
+                            <!-- <span class="es_spinner_image" id="spinner-image"><img src="http://localhost/UEN/wp-content/plugins/email-subscribers/lite/public/images/spinner.gif" alt="Loading"></span> -->
                           </form> 
-                          <span class="es_subscription_message " id="es_subscription_message_648320ca445bb"></span>
+                          <span class="es_subscription_message" id="es_subscription_message_648320ca445bb"></span>
                          </div>
                          </div>
                      </div>

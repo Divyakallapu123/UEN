@@ -16,7 +16,6 @@
 .header .search-form.active{right: 12%;/* transition: .4s linear; */}
 .prev_arrow{margin: 0px 30px 0px 0px;}
 .next_arrow{margin: 0px 0px 0px 30px;}
-.norfolk{display: flex;align-self: center;}
 .featured1_img {height: 165px;}
 .email{display: flex;align-self: center;}
 }
@@ -50,4 +49,11 @@
 .next_arrow{margin: 20px 0px 20px 30px;}
 .swiper-slide-container {margin: 10px 10px 10px 10px;}
 .swiper-slide-container-categories{margin: 10px 10px 10px 10px;}
+.header .search-form input {height: 46%;font-size: 16px;}
+.header .search-form.active {display: contents;}
+.searchlogo-img {margin: 0px 16px 0px 10px;}
+.header .search-form input {width: 50%;font-size: 16px;margin: 28px 0px 0px 0px;}
+.close_img {margin: 0px;}
+/* .link-copied{top:0;right:-100px} */
 }
+

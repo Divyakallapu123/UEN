@@ -70,7 +70,7 @@ $( document ).ready(function() {
 });
 
 
-/******* swiper starts  ********/
+/******* swiper ends  ********/
 
 
 
@@ -89,3 +89,35 @@ if ($(".formValidation").length) {
         oForms.submitForm(e, oForm);
       });
   }  
+
+
+
+
+
+/******* search bar starts ********/
+
+  let searchForm = document.querySelector('.search-form');
+  let searchFormm = document.querySelector('.qqqq');
+  let searchFormmm = document.querySelector('.close_img');
+  document.querySelector('#search-btn').onclick = () =>
+  {
+   searchForm.classList.toggle('active')
+   searchFormm.classList.toggle('active')
+  }
+  document.querySelector('#close').onclick = () =>{
+   searchForm.classList.remove('active')
+   searchFormm.classList.remove('active')
+  }
+
+  document.querySelector('#search-btn1').onclick = () =>
+  {
+   searchForm.classList.toggle('active')
+   searchFormm.classList.toggle('active')
+  }
+  document.querySelector('#close').onclick = () =>{
+   searchForm.classList.remove('active')
+   searchFormm.classList.remove('active')
+  }
+  
+
+  /******* search bar  ends ********/

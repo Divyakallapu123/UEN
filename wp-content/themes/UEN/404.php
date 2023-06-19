@@ -1,27 +1,54 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ *  Template Name: 404error page
+ * The main template file
  *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
 
-get_header();
 ?>
 
-	<header class="page-header alignwide">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing here', 'twentytwentyone' ); ?></h1>
-	</header><!-- .page-header -->
+<!doctype html>
+<html lang="en">
 
-	<div class="error-404 not-found default-max-width">
-		<div class="page-content">
-			<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentytwentyone' ); ?></p>
-			<?php get_search_form(); ?>
-		</div><!-- .page-content -->
-	</div><!-- .error-404 -->
 
-<?php
-get_footer();
+<?php get_header(); ?>
+<body>
+<!-- HEADER SECTION -->
+	<?php include("inc/nav.php"); ?>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/404errorpage.css">
+<!-- HEADER SECTION ENDS-->
+
+    <section class="errorpage-sec"> 
+            <div class="error-container">
+                 <div class="pagenotfound">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/404error_img.png" class="img-fluid error_img" alt="">
+                 </div>
+                 <div class="error-contant">
+                    <h2 class="page"><?php echo ot_get_option('error_heading');?></h2>
+                    <p class="page-para"><?php echo ot_get_option('error_desc');?></p>
+                    <div class="homepagebtn">
+                        <a class="btn btn-homepage" href="<?php echo get_site_url(); ?>"><?php echo ot_get_option('button_title');?></a>
+                    </div>
+                    
+                 </div>
+                  
+            </div>
+          </section>    
+	<!-- --------- footer starts -------  -->
+    
+    <script src="<?php echo get_template_directory_uri()?>/assets/js/jquery.slim.min.js"></script>
+<?php get_footer(); ?>
+ 
+</body>
+    
+    </html>

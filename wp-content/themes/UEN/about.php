@@ -26,6 +26,7 @@
  <!-- HEADER SECTION -->
  <header>
  <?php include("inc/nav.php");?>
+ <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/about.css">
     <?php $category = isset($_GET['cat']) ? $_GET['cat'] : "all"; ?>
 </header>
 <!-- HEADER SECTION ENDS-->
@@ -90,27 +91,29 @@
      <section class="team-sec">
          <div class="container">
             <div class="d-flex">
-                <h2 class="team">TEAM</h2>
+                <h2 class="team"><?php echo get_field('team_title'); ?></h2>
                 <div class="thin_line"></div>
               </div>
          </div>
          <div class="swiper-container position-relative">
             <div class="swiper-wrapper">
+            <?php while(have_rows('cards')): the_row(); ?>
               <div class="swiper-slide">
                 <div class="swiper-slide-container-categories">
                       <div class="row">
                           <div class="col-md-12">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cheif-excutive.png" class="img-fluid combat_img" alt="">
+                            <img src="<?php echo get_sub_field('card_image'); ?>" class="img-fluid combat_img" alt="">
                             <div class="d-flex jane-doe">
-                                <h3 class="jane">JANE DOE</h3>
-                                <p class="manager">(chief executive)</p>
+                                <h3 class="jane"><?php echo get_sub_field('card_title'); ?></h3>
+                                <p class="manager"><?php echo get_sub_field('card_title2'); ?></p>
                             </div>
                           </div>
                       </div>
                         
                 </div>
                 </div>
-                <div class="swiper-slide">
+                <?php  endwhile; ?>  
+                <!-- <div class="swiper-slide">
                   <div class="swiper-slide-container-categories">
                         <div class="row">
                             <div class="col-md-12">
@@ -193,7 +196,7 @@
                                 </div>
                                   
                           </div>
-                          </div>
+                          </div> -->
               
             </div>
             <!-- Add Pagination -->
@@ -218,18 +221,55 @@
           </div>
           <div class="card-deck">
             <div class="row">
+            <?php
+                    if ($category == "all") {
+                        $args = array(
+                            'post_type' => 'blogs',
+                            'post_status' => 'publish',
+                            'offset' => 0,
+                            // 'page'=>1,
+                            'order' => 'DESC',
+                            'posts_per_page' => 6
+                        );
+                    } else {
+                        $args = array(
+                            'post_type' => 'blogs',
+                            'post_status' => 'publish',
+                            'offset' => 0,
+                            // 'page'=>1,
+                            'order' => 'DESC',
+                            'posts_per_page' => 6,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'blogs-category',
+                                    'field'    => 'slug',
+                                    'terms'    => $category,
+                                )
+                            )
+                        );
+                    }
+        ?>
+        <?php
+        $the_query = new WP_Query($args);
+        while ($the_query->have_posts()) : $the_query->the_post();
+            $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
+            $trimTitle = wp_trim_words(get_the_title(), $num_words = 15);
+            $shortdescription = wp_trim_words(get_the_content(), $num_words = 30);
+            $terms = get_the_terms($post->ID, 'blogs-category');
+             $nameTerm = $terms[0]->name;
+        ?>
               <div class="col-md-4 mb-5 cards">
                 <div class="card">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured1_img.png" class="card-img-top featured1_img" alt="...">
+                  <img src="<?php echo $image[0]; ?>" class="card-img-top featured1_img" alt="...">
                   <div class="card-body cardbg-color">
-                    <h5 class="card-title">Category</h5>
-                    <p class="card-text lorem-ipsum">Lorem ipsum dolor sit</p>
-                    <p class="card-text lorem-para">Lorem ipsum dolor sit amet consectetur. Ac magna massa pellentesque viverra eu sit.A fermentum massa et commodo ut vitae.</p>
-                     <a class="card-text read-more mt-3 mb-3" href="">Read more</a>                   
+                  <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h5 class="card-title"><?php echo $nameTerm; ?></h5></a>
+                    <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
+                    <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
+                     <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 mb-5 cards">
+              <!-- <div class="col-md-4 mb-5 cards">
                 <div class="card">
                   <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured2_img.png" class="card-img-top featured1_img" alt="...">
                   <div class="card-body cardbg-color">
@@ -283,11 +323,14 @@
                      <a class="card-text read-more mt-3 mb-3" href="">Read more</a>                   
                   </div>
                 </div>
-              </div>
+              </div> -->
+              <?php endwhile;
+                   wp_reset_query();
+               ?>   
             </div>
           </div>
           <div class="view mt-3">
-            <a class="view-all" href="">view all</a>
+            <a class="view-all" href="<?php echo get_site_url() ?>/blogs" ?><?php echo get_field('view_all'); ?></a>
           </div>  
     </div>
  </section>
@@ -300,24 +343,48 @@
  <section class="categories-sec">
     <div class="container">
       <div class="d-flex">
-        <h2 class="categories">CATEGORIES</h2>
+      <a href="<?php echo get_site_url() ?>/Categories"><h2 class="categories"><?php echo get_field('category_title'); ?> </h2></a>
         <div class="thin_line"></div>
       </div>
     </div>
     <div class="swiper-container position-relative">
         <div class="swiper-wrapper">
+        <?php $cat = get_terms('blogs-category');
+
+foreach ($cat as $catVal) {
+    $termid = ($catVal->term_id);
+    $meta_image = z_taxonomy_image_url($termid);
+
+    // conut article
+    $args = array(
+        'post_type' => 'blogs',
+        'post_status' => 'publish',
+
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'blogs-category',
+                'field'    => 'slug',
+                'terms'    => $catVal->slug,
+            ),
+        )
+    );
+    $the_query = new WP_Query($args);
+
+?>
           <div class="swiper-slide">
             <div class="swiper-slide-container-categories">
                   <div class="row">
-                      <div class="col-md-12">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/water_img.png" class="img-fluid combat_img" alt="">
-                        <p class="combat">WATER</p>
-                      </div>
+                  <div class="col-md-12">
+                             <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $catVal->slug ?>">
+                              <img src="<?php echo $meta_image; ?>" class="img-fluid combat_img" alt="">
+                              <p class="combat"><?php echo $catVal->name; ?></p>
+                              </a>  
+                            </div>
                   </div>
                     
             </div>
-            </div>
-            <div class="swiper-slide">
+          </div>
+            <!-- <div class="swiper-slide">
               <div class="swiper-slide-container-categories">
                     <div class="row">
                         <div class="col-md-12">
@@ -382,8 +449,8 @@
                             </div>
                               
                       </div>
-                      </div>
-          
+                  </div> -->
+                  <?php } ?>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -391,68 +458,16 @@
           <div class="swiper-button-prev"> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/next_arrow.svg" class="img-fluid prev_arrow" alt=""> </div>   
       </div>
       <div class="view">
-        <a class="view-all" href="">view all</a>
+        <a class="view-all" href="<?php echo get_site_url() ?>/categories" ?>view all</a>
       </div> 
    </section>
 
 <!-- CATEGORIES SECTION ENDS -->
 
- <!-- NEWSLATTER SECTION STARTS -->
-           
- <section class="newslatter-sec">
-    <div class="container">
-      <div class="row">
-          <div class="col-md-5">
-                 <h2 class="newsletter">Newsletter</h2>
-                 <p class="stay mb-2">Stay up to date with all the latest news, updates, and exclusive content from our organization.</p>
-          </div>
-          <div class="col-md-7">
-           <form class="formValidation">
-             <div class="form-group">
-               <label for="exampleInputEmail1" class="mb-3 mt-3">Email address</label>
-               <div class="row">
-                   <div class="col-md-7 mt-2">
-                     <input type="email" class="form-control mb-3 mt-1 email-address" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email" required data-bv-notempty-message="Please enter email">
-                   </div>
-                   <div class="col-md-5">
-                     <button type="submit" class="btn btn-primary button">BUTTON</button>
-                   </div>
-               </div>
-             </div>
-            
-           </form> 
-          </div>
-      </div>
-    </div>
-</section>
-
-<!-- NEWSLATTER SECTION ENDS -->
-
 
  <!-- FOOTERS STARTS -->
- <footer class="footer-bgcolor">
-    <div class="container">
-         <div class="footer-contant">
-            <h2 class="logo-footer">LOGO</h2>
-            <p class="magna">Ac magna massa pellentesque viverra eu sit.A fermentum massa et commodo ut vitae.</p>
-            <div class="footer-circleicon">
-             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer_circleicon.svg" class="img-fluid circleicon" alt="">
-             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer_circleicon.svg" class="img-fluid circleicon" alt="">
-             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer_circleicon.svg" class="img-fluid circleicon" alt="">
-            </div>
-           </div>
-    </div>
-  </footer>
+          <?php get_footer() ?>
   <!-- FOOTER ENDS -->
-
-
- <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.4.1.js" ></script>
- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.bundle.min.js"></script>
- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrapValidator.min.js"></script>
- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/wow.min.js"></script>
- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/custom.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 </body>
 </html>
