@@ -1,0 +1,41 @@
+body {max-width: 100%; overflow-x: clip;}
+
+
+.nav-page .nav-item .navpage-link{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color:#000000;margin: 20px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link1{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 8px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 15px 20px 8px 20px;}
+.searach-black-icon{display: flex;}
+.searach-white-icon{display: none;}
+
+
+/* ABOUT BANNER SECTION CSS STARTS */
+.about-sec{padding: 70px 0px 40px 0px;}
+.about{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 42px;color: #002399;padding: 30px 5px 30px 1px;margin: 0;}
+.about_bannerimg{width: 100%;}
+.lorem-about{font-size: 24px;color: #000000;}
+.lorempara-about{color: #000000;max-width: 1030px;}
+/* ABOUT BANNER SECTION CSS ENDS */
+
+
+/* VISION SECTION CSS STARTS */
+.vision-sec{padding: 40px 0px 40px 0px;}     
+.vision{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 42px;color: #002399;padding: 30px 5px 30px 1px;margin: 0;}
+.mission{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 42px;color: #002399;padding: 30px 5px 30px 1px;margin: 0;}
+.vision-bgcolor{background: #FBFBFB;box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.12);padding: 50PX 20PX 50PX 20PX;border-bottom: 10px solid #002399;}
+.lorem-vision{font-family: 'BebasNeue';font-weight: 400; font-size: 32px;color: #454545;line-height: 40px;}
+/* VISION SECTION CSS ENDS */
+
+
+
+/* TEAM SECTION STARTS */
+
+.team-sec{padding: 40px 0px 40px 0px;}
+.team-sec .team{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 42px;color: #002399;padding: 30px 5px 30px 1px;margin: 0;}
+.jane{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 24px;color: #454545; margin: 6px 0px 0px 0px;}
+.manager{margin: 6px 0px 0px 15px;}
+.jane-doe{background: #FFF1F0;padding: 10px 10px 10px 10px;}
+/* TEAM SECTION ENDS */
+
+.swiper-container {margin:20px auto 40px auto !important;}
+
+/* .view{margin: 0px 50px 0px 0px!important;} */
