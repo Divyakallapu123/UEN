@@ -3,15 +3,20 @@ body {max-width: 100%; overflow-x: clip;}
 
 .nav-page .nav-item .navpage-link{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color:#000000;margin: 20px 20px 8px 20px;}
 .nav-page .nav-item .navpage-link1{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 8px 20px 8px 20px;}
-.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 15px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 20px 0px 8px 0px;}
+.btn-subscribe, .btn-subscribe:hover, .btn-subscribe:focus {color: #000;}
 .searach-black-icon{display: flex;}
 .searach-white-icon{display: none;}
 
+.downarrow-blackimg{display: block;}
+.downarrow-whiteimg{display: none;}
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-whiteimg{display: block;}
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-blackimg{display: none;}
 
 /* ABOUT BANNER SECTION CSS STARTS */
 .about-sec{padding: 70px 0px 40px 0px;}
 .about{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 42px;color: #002399;padding: 30px 5px 30px 1px;margin: 0;}
-.about_bannerimg{width: 100%;}
+.about_bannerimg{width: 100%;height:478px;}
 .lorem-about{font-size: 24px;color: #000000;}
 .lorempara-about{color: #000000;max-width: 1030px;}
 /* ABOUT BANNER SECTION CSS ENDS */
@@ -39,3 +44,4 @@ body {max-width: 100%; overflow-x: clip;}
 .swiper-container {margin:20px auto 40px auto !important;}
 
 /* .view{margin: 0px 50px 0px 0px!important;} */
+

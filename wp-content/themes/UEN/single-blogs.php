@@ -144,7 +144,7 @@
                                         $count = 1;
                                         foreach ($terms as $term) {
                                     ?>
-                                            <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $term->slug ?>" class="fund">
+                                            <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>" class="fund">
                                                 <?php if ($count > 1) { ?>,<?php } ?>
                                                 <h5 class="card-title"><?php echo $term->name; ?></h5>
                                                 
@@ -158,7 +158,7 @@
                                     ?>
                         <p class="card-text lorem-ipsum"><?php echo $trimTitle ?></p>
                         <p class="card-text lorem-para"><?php echo $shordescription; ?></p>
-                         <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
+                         <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>                   
                       </div>
                     </div>
                   </div>

@@ -265,7 +265,7 @@
                   <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h5 class="card-title"><?php echo $nameTerm; ?></h5></a>
                     <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                     <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
-                     <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
+                     <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>                   
                   </div>
                 </div>
               </div>

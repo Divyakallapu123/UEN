@@ -27,7 +27,7 @@ h6 {font-size:16px; color: #000000; font-weight: 400; font-family: 'Lato';}
 
 /*---------------------------------------------------*/
 html {}
-body {color: #000000;  font-size:18px; background: #F5F5F5; width: 100%!important;  line-height: 0!important;    font-family: 'Lato';}
+body {color: #000000;  font-size:16px; background:#FFFFFF; width: 100%!important;  line-height: 0!important;    font-family: 'Lato';}
  html, body {max-width: 100%; overflow-x: hidden;}
 /*-----------LayOut Start here-----------------------*/
 .wrapper{margin:0 auto;position: relative; overflow: hidden;padding-top: 100px;}
@@ -66,9 +66,9 @@ p{font-size: 16px; font-weight: 400; color: #454545; line-height: 25px; margin-b
 .padding-three{padding: 5px 0 0 0;}
 .nav-page .nav-item .navpage-link{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #fff;margin: 20px 20px 8px 20px;}
 .nav-page .nav-item .navpage-link1{margin: 8px 20px 8px 20px;}
-.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #fff;margin: 15px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #fff;margin: 20px 0px 8px 0px;}
+.nav-page .nav-item .dropdownicon{margin: 15px 0px 8px 0px;}
 .dropdown-toggle::after {display: none;}
-.downarrow-whiteimg{margin: 0px 0px 0px 15px;}
 .dropdown-name{padding: 20px 10px 20px 25px;}
 .dropdown-menu{background: #FFB514;}
 .btn-padding{ margin: 8px 20px 8px 20px;}
@@ -93,12 +93,12 @@ header{transition:  0.3s;}
 
 /* Header section ends */
 
-.thin_line{background: #DADADA;height: 2px;width: 267px;align-self: center;margin: 0px 0px 6px 0px;}
+.thin_line{background: #DADADA;height: 2px;width: 267px;align-self: center;margin: 0px 0px 6px 15px;}
 
 /* FEATURED SECTION STARTS */
     .category{color: #454545;}
     .featured_img{width: 100%;padding: 0PX 0PX 20PX 0PX;height: 374px;}
-    .read-more{padding: 20px 0px 20px 0px;color: #002399;font-size: 16px;}
+    .read-more{padding: 20px 0px 20px 0px;color: #002399;font-size: 16px;font-weight: bold;}
     a:hover, a:focus { color: #002399;}
     .ac-magna{padding: 20px 0px 20px 0px;
         /* overflow: hidden;
@@ -113,7 +113,7 @@ header{transition:  0.3s;}
         -webkit-line-clamp: 3;// number of lines to show
                 /* line-clamp: 3; 
         -webkit-box-orient: vertical; */ }
-    .featured_img1{width: 100%;height: 120px;}
+    .featured_img1{width: 100%;height: 145px;}
     .lorem-para{color: #000000; margin: 10px 0px 20px 0px;
         /* display: -webkit-box;
             overflow: hidden;
@@ -170,14 +170,14 @@ header{transition:  0.3s;}
 
 /* SWIPER SECTION CSS STARTS */
     .swiper-container {width:100%; height:300px; margin:20px auto;}
-    .swiper-slide-container {height: 280px;text-align: center;font-size: 18px; background:#fff;height:100%; margin:auto; display: -webkit-box;display: -ms-flexbox; display: -webkit-flex; display: block; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; padding:40px 10px 10px 10px; border-bottom: 10px solid #002399;}
+    .swiper-slide-container {height: 280px;text-align: center;font-size: 18px; background:#fff; margin:auto; display: -webkit-box;display: -ms-flexbox; display: -webkit-flex; display: block; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; padding:40px 10px 10px 10px; border-bottom: 10px solid #002399;}
     .swiper-button-next, .swiper-rtl .swiper-button-prev {right: var(--swiper-navigation-sides-offset,47%) !important;}
     .swiper-button-prev, .swiper-rtl .swiper-button-next {left: var(--swiper-navigation-sides-offset,47%)!important;}
     .swiper-button-prev { top: var(--swiper-navigation-top-offset,120%)!important;}
     .swiper-button-next {top: var(--swiper-navigation-top-offset,120%)!important;}
     .swiper-button-next:after, .swiper-button-prev:after { display: none;}
     .prev_arrow{transform: rotate(180deg);}
-    .swiper-backface-hidden .swiper-slide {max-width: 330px!important;width: 100%!important;margin-right: 30px!important;}
+    .swiper-backface-hidden .swiper-slide {max-width: 330px!important;width: 100%!important;margin-right: 20px!important;}
 /* SWIPER SECTION CSS ENDS */    
 html {
     scroll-behavior: smooth;
@@ -195,7 +195,7 @@ html {
 .header .qqqq.active{ background: #fff;width: 100%;height: 100px;position: absolute;top: 0px;z-index: 1000;/* transition: .4s linear; */}
 .header .qqqq.disable{background:none;width: 100%;height: 100px;}
 .searchlogo-img{margin: 0px 30px 0px 0px;}
-.header .search-form input{height: 100%;width: 100%;background: none;text-transform: none;font-size: 1.6rem;color: var(--black);padding: 10px 10px 10px 10px;background: #fff;border: 1px solid #454545;outline: none;}
+.header .search-form input{width: 100%;background: none;text-transform: none;font-size: 16px;color: #000;padding: 10px 10px 10px 10px;background: #fff;border: 1px solid #454545;outline: none;}
 .header .search-form label{font-size: 1.5rem;padding: 10px 10px 10px 10px;color: var(--black);cursor: pointer;margin: 0;}
 .close_img{margin: 0px 0px 0px 50px;}
 
@@ -203,3 +203,26 @@ html {
 .link-copied{font-size:14px;font-weight:bold;border-radius:5px;color:#000;padding:6px;position:absolute;width:100px;top:-45px;right:0;border:2px solid #3069b3;padding: 10px;}
 .copylink-button{position:relative}
 
+.arrow-right{margin: 10px 10px 10px 10px;}
+
+.customize-support.scroll-up .header .collapse-bg-color .navpage-link,.customize-support.scroll-up .header .collapse-bg-color .navpage-link2{
+    color:#fff;
+}
+.customize-support.scroll-up .header .collapse-bg-color .navpage-link,.customize-support.scroll-up .header .collapse-bg-color .btn-subscribe{
+    color:#fff;
+}
+
+.customize-support.scroll-up .header .collapse-bg-color .searach-white-icon{display: block;}
+.customize-support.scroll-up .header .collapse-bg-color .searach-black-icon{display: none;}
+
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-whiteimg{display: block;}
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-blackimg{display: none;}
+
+.dropdown-item:hover {background-color: #EDA200;}
+
+
+.team-logo{
+    width: 100%;
+    height: 127px;
+}
+.cursor{cursor: pointer;}

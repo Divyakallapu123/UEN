@@ -42,9 +42,10 @@ $( document ).ready(function() {
     slidesPerView: 4,
     loop: true,
     centeredSlides: true,
-    paginationClickable: true,
+    mousewheel: false,
+    // paginationClickable: true,
     spaceBetween: 30,
-    slideToClickedSlide: true,
+    slideToClickedSlide: false,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -69,10 +70,44 @@ $( document ).ready(function() {
   });
 });
 
-
 /******* swiper ends  ********/
 
+/******* swiper starts  ********/
 
+$( document ).ready(function() {
+  var swiper = new Swiper('.swiper-category', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 4,
+    loop: true,
+    centeredSlides: true,
+    paginationClickable: true,
+    spaceBetween: 30,
+    slideToClickedSlide: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+         320: {
+           slidesPerView: 1,
+         },
+         375: {
+           slidesPerView: 2,
+         },
+         425: {
+           slidesPerView: 2,
+         },
+         768: {
+           slidesPerView: 3,
+         },
+         1200: {
+          slidesPerView: 3,
+        },
+       },
+  });
+});
+
+/******* swiper ends  ********/
 
 if ($(".formValidation").length) {
     $(".formValidation")

@@ -1,8 +1,13 @@
 .nav-page .nav-item .navpage-link{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color:#000000;margin: 20px 20px 8px 20px;}
 .nav-page .nav-item .navpage-link1{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 8px 20px 8px 20px;}
-.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 15px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 20px 0px 8px 0px;}
+.btn-subscribe, .btn-subscribe:hover, .btn-subscribe:focus {color: #000;}
 .searach-black-icon{display: flex;}
 .searach-white-icon{display: none;}
+.scroll-down header{background-color: #000;box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);transition:  0.4s;transform: translate3d(0, -100%, 0);}
+.scroll-down .header-logo{color: #fff;}
+.scroll-up .header{background: rgba(7, 7, 7, 0.6);}
+.scroll-up .header-logo{color: #fff;}
 
 
 /* PAGE NOT FOUND SECTION STARTS  */

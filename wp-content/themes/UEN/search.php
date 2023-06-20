@@ -94,7 +94,7 @@
                     <h5 class="card-title"><?php echo $terms[0]->name; ?></h5>
                     <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                     <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
-                     <a class="card-text read-more mt-3 mb-3" href="">Read more</a>                   
+                     <a class="card-text read-more mt-3 mb-3" href="">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>                   
                   </div>
                 </div>
               </div>

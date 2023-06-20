@@ -88,10 +88,10 @@
                         ?>
          <div class="col-md-6 mb-5">
                 <img src="<?php echo $image[0] ?>" class="img-fluid featured_img" alt="">
-                <a href="<?php the_permalink(); ?>"><h5 class="category"><?php echo ("$terms_slug_str") ?></h5> </a>
+                <h5 class="category"><?php echo ("$terms_slug_str") ?></h5>
                 <p class="lorem-ipsum"><?php echo  $trimTitle ?></p>
                 <p class="ac-magna"><?php echo $shortdescription; ?></p>
-                <a class="read-more" href="<?php the_permalink(); ?>">Read more</a>     
+                <a class="read-more" href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>     
          </div>
          <?php
                             }
@@ -158,9 +158,9 @@
                        <img src="<?php echo $image[0] ?>" class="img-fluid featured_img1" alt="">
                   </div>
                   <div class="col-md-8 mb-5">
-                       <a href="<?php the_permalink(); ?>"><h6 class="categor"><?php echo ("$terms_slug_str") ?></h6></a>
+                       <h6 class="categor"><?php echo ("$terms_slug_str") ?></h6>
                         <p class="lorem-ipsumdolor"><?php echo $shortdescription; ?></p>
-                        <a class="read-more"href="<?php the_permalink(); ?>">Read more</a>
+                        <a class="read-more"href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>
                   </div>
                   <!-- <div class="col-md-4 mb-3">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured_img2.svg" class="img-fluid featured_img1" alt="">
@@ -254,10 +254,10 @@
               <div class="card">
                 <img src="<?php echo $image[0] ?>" class="card-img-top featured1_img" alt="...">
                 <div class="card-body cardbg-color">
-                <a href="<?php the_permalink(); ?>"><h5 class="card-title"><?php echo ("$terms_slug_str") ?></h5></a>
+                <h5 class="card-title"><?php echo ("$terms_slug_str") ?></h5>
                   <p class="card-text lorem-ipsum"><?php echo  $trimTitle ?></p>
                   <p class="card-text lorem-para"><?php echo $shortdescription; ?></p>
-                   <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
+                   <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>                   
                 </div>
               </div>
             </div>
@@ -398,7 +398,7 @@
                 ?>
 
                 <div class="load mt-3">
-                    <button type="submit" id="load_more_btn" class="btn load-more main-button <?php if ($count < 1) { ?> d-none <?php } ?>">LoadMore<img src="<?php echo get_template_directory_uri(); ?>/assets/images/down_arrowimg.svg" class="img-fluid" alt=""></button>
+                    <button type="submit" id="load_more_btn" class="btn load-more main-button <?php if ($count < 1) { ?> d-none <?php } ?>">LoadMore<img src="<?php echo get_template_directory_uri(); ?>/assets/images/down_arrowimg.svg" class="img-fluid loadmoreimg" alt=""></button>
                 </div>
             <?php } ?>
         <!-- <div class="load mt-3">

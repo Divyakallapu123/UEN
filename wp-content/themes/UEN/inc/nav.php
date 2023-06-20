@@ -22,9 +22,11 @@
               <li class="nav-item">
                 <a class="nav-link navpage-link" href="<?php echo get_field('aboutpagelink',22);?>"><?php echo get_field('about',22) ?></a>
               </li>
-              <li class="nav-item dropdown"> 
-                <a class="nav-link dropdown-toggle navpage-link2" href="categorylist.html" role="button" data-toggle="dropdown" aria-expanded="false">
-                <?php echo get_field('categories',22) ?><img src="<?php echo get_template_directory_uri(); ?>/assets/images/downarrow_whiteimg.svg" class="img-fluid downarrow-whiteimg" alt="">
+              <li class="nav-item dropdown d-flex"> 
+                <a class="nav-link navpage-link2" href="<?php echo get_field('categorypagelink',22);?>"><?php echo get_field('categories',22) ?></a>
+                <a class="nav-link dropdown-toggle dropdownicon" href="<?php echo get_field('categorypagelink',22);?>" role="button" data-toggle="dropdown" aria-expanded="false">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/downarrow_whiteimg.svg" class="img-fluid downarrow-whiteimg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dropdown_arrow_black.svg" class="img-fluid downarrow-blackimg" alt="">
                 </a>
                 <div class="dropdown-menu">
                 <?php
@@ -79,8 +81,8 @@
                 <a class="nav-link btn btn-subscribe" href="#subscribe"><?php echo get_field('subscribe_button',22) ?></a>
               </li>
               <li class="nav-item d-flex justify-content-center ">
-                <img src="<?php echo get_field('search_white_img',22)?>"  class="img-fluid navpage-link1 searach-white-icon" id="search-btn" alt="">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-black.svg" class="img-fluid navpage-link1 searach-black-icon" id="search-btn1" alt="">
+                <img src="<?php echo get_field('search_white_img',22)?>"  class="cursor img-fluid navpage-link1 searach-white-icon" id="search-btn" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search-black.svg" class="cursor img-fluid navpage-link1 searach-black-icon" id="search-btn1" alt="">
               </li>
             </ul>
           </div>

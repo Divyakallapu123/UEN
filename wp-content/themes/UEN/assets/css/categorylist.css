@@ -9,3 +9,8 @@
      .Classification{font-family: 'BebasNeue'!important;font-weight: 400;font-size: 42px;color: #002399;padding: 30px 0px 30px 0px;}
      .category-container{max-width: 1240px; margin: 0 auto;}
 /* CLASSIFICATION SECTION ENDS */
+
+.downarrow-blackimg{display: block;}
+.downarrow-whiteimg{display: none;}
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-whiteimg{display: block;}
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-blackimg{display: none;}

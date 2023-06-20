@@ -65,7 +65,7 @@
                                <p class="titans"><?php echo get_sub_field('team_name'); ?></p>
                          </div>
                          <div class="col-md-6">
-                                <img src="<?php echo get_sub_field('team_logo'); ?>" class="img-fluid" alt="">
+                                <img src="<?php echo get_sub_field('team_logo'); ?>" class="img-fluid team-logo" alt="">
                          </div>
                      </div>
                    </div>
@@ -221,7 +221,7 @@
                         <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h5 class="category"><?php echo $nameTerm; ?></h5></a>
                         <p class="lorem-ipsum"><?php echo $trimTitle; ?></p>
                         <p class="ac-magna"><?Php echo $shortdescription; ?></p>
-                        <a class="read-more" href="<?php the_permalink(); ?>">Read more</a>     
+                        <a class="read-more" href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>  
                  </div>
                  <?php endwhile;
                    wp_reset_query();
@@ -271,7 +271,7 @@
                           <div class="col-md-8 mb-5">
                           <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h6 class="categor"><?php echo $nameTerm; ?></h6></a>
                                 <p class="lorem-ipsumdolor"><?Php echo $shortdescription; ?></p>
-                                <a class="read-more"href="<?php the_permalink(); ?>">Read more</a>
+                                <a class="read-more"href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>
                           </div>
                           <!-- <div class="col-md-4 mb-3">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/featured_img2.svg" class="img-fluid featured_img1" alt="">
@@ -352,7 +352,7 @@
                         <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $terms[0]->slug; ?>"><h5 class="card-title"><?php echo $nameTerm; ?></h5></a>
                           <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                           <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
-                           <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
+                           <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>                   
                         </div>
                       </div>
                     </div>
@@ -437,9 +437,9 @@
             $cat_slug = $cat->slug;
             ?>
                 <div class="d-flex">
-                  <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $cat_slug; ?>">
+                <a href="<?php echo get_site_url() ?>/blogs?cat=<?php echo $cat_slug; ?>">
                     <h2 class="events"><?php echo $cat_name; ?></h2>
-                    </a>
+                </a>    
                   <div class="thin_line"></div>
                 </div>
                 <div class="card-deck">
@@ -515,7 +515,7 @@
                           <h5 class="card-title"><?php //echo $nameTerm; ?></h5>
                           <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                           <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
-                           <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
+                           <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>                   
                         </div>
                       </div>
                     </div>
@@ -684,7 +684,7 @@
                           <!-- <a href="<?php //echo get_field('category_link'); ?>"><h5 class="card-title"><?php //echo $nameTerm; ?></h5></a> -->
                           <p class="card-text lorem-ipsum"><?php echo $trimTitle; ?></p>
                           <p class="card-text lorem-para"><?Php echo $shortdescription; ?></p>
-                           <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more</a>                   
+                           <a class="card-text read-more mt-3 mb-3" href="<?php the_permalink(); ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg" class="img-fluid arrow-right" alt=""></a>                   
                         </div>
                       </div>
                     </div>
@@ -772,7 +772,7 @@
                 <div class="thin_line"></div>
               </div>
             </div>
-            <div class="swiper-container position-relative">
+            <div class="swiper-category position-relative">
               <div class="swiper-wrapper">
               <?php $cat = get_terms('blogs-category');
 
@@ -886,7 +886,7 @@ foreach ($cat as $catVal) {
               <a class="view-all" href="<?php echo get_site_url() ?>/categories" ?><?php echo get_field('view_all'); ?></a>
             </div> 
            </section>
-
+<!--  -->
       <!-- CATEGORIES SECTION ENDS -->
 
 

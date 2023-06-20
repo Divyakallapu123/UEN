@@ -18,6 +18,7 @@
 .next_arrow{margin: 0px 0px 0px 30px;}
 .featured1_img {height: 165px;}
 .email{display: flex;align-self: center;}
+.nav-page .nav-item .navpage-link2 {margin: 20px 8px 8px 18px;}
 }
 
 
@@ -54,6 +55,8 @@
 .searchlogo-img {margin: 0px 16px 0px 10px;}
 .header .search-form input {width: 50%;font-size: 16px;margin: 28px 0px 0px 0px;}
 .close_img {margin: 0px;}
+.nav-page .nav-item .navpage-link2 {margin: 20px 8px 8px 18px;}
+/* .featured_img1 {height: 230px;} */
 /* .link-copied{top:0;right:-100px} */
 }
 

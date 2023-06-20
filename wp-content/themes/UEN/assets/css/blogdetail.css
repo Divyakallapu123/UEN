@@ -1,15 +1,19 @@
 /* BLOG DETAIL BANNER SECTION STARTS */
 .blogdetailbanner-sec{ padding: 80px 0px 40px 0px;}
-.blogdetail_bannerimg{padding: 10px 10px 10px 20px;}
+.blogdetail_bannerimg{padding: 10px 10px 10px 20px;height:478px;}
 
 /* BLOG DETAIL BANNER SECTION ENDS */
-
 .nav-page .nav-item .navpage-link{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color:#000000;margin: 20px 20px 8px 20px;}
 .nav-page .nav-item .navpage-link1{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 8px 20px 8px 20px;}
-.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 15px 20px 8px 20px;}
+.nav-page .nav-item .navpage-link2{font-family: 'BebasNeue';font-weight: 400;font-size: 16px;color: #000000;margin: 20px 0px 8px 0px;}
+.btn-subscribe, .btn-subscribe:hover, .btn-subscribe:focus {color: #000;}
 .searach-black-icon{display: flex;}
 .searach-white-icon{display: none;}
 
+.downarrow-blackimg{display: block;}
+.downarrow-whiteimg{display: none;}
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-whiteimg{display: block;}
+.customize-support.scroll-up .header .collapse-bg-color .downarrow-blackimg{display: none;}
 
 
 /* CATEGOTY SECTION STARTS */
@@ -26,4 +30,5 @@
 .associate-sec{padding: 40px 0px 40px 0px;}
 .card-deck{padding: 15px 15px 15px 15px;}
 .blogdetailcategor-container{max-width: 1029px;}
+.loadmoreimg{margin: 0px 10px 0px 10px;}
 /* CATEGOTY SECTION ENDS */
